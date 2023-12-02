@@ -1,0 +1,15 @@
+Declaration / Initialization
+
+Declaration is giving the name and type of a variable
+
+double radius1;
+String testString;
+int num1;
+
+Initialization is giving the value
+
+radius1 = 31.4
+testString = "Hello World"
+num1 = 5;
+
+

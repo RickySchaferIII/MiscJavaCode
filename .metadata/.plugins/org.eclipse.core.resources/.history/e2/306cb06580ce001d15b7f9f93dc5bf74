@@ -1,0 +1,108 @@
+// Ricky Schafer [email address:tschafer0109@gmail.com ]
+	/**
+	* Overview: This program takes the number of cards the user wants to draw and randomly draws that amount of cards
+	* Input: User inputs # of cards they want to draw.
+	* Output: Text Display * Variables: faceValue, suite, and counter
+	* Plan:
+	* 1. User runs the program
+	* 2. User inputs the information that is asked for
+	* 3. Program then randomly picks 2 numbers which are set to suite and facevalue
+	* 4. Program then uses the switch statement to decide what suite and facevalue to print out
+	* 5. Program then prints out the suite and the facevalue
+	* @version: 1.0 March 28, 2023 
+	* @author: Ricky / Schafer
+	*/
+import java.util.Random;
+class Card {
+	private int faceValue;
+	private String suite;
+	private static int counter = 0;
+	
+	
+	public Card() {
+		deal();
+		counter++;
+		
+	}
+	public int getfaceValue() {
+		return faceValue;
+	}
+	public String getSuite() {
+		return suite;
+	}
+	public void setfaceValue(int newfaceValue) {
+		faceValue = newfaceValue;
+	}
+	public void setSuite(String newSuite) {
+		suite = newSuite;
+	}
+	public void deal() {
+		Random generator = new Random();
+		faceValue = generator.nextInt(13) + 1;
+		int suiteNumber = generator.nextInt(4);
+		
+		switch (suiteNumber) {
+		
+			case 0: 
+				suite = "Spades"; 
+				break;
+			case 1:
+				suite = "Diamonds";
+				break;
+			case 2:
+				suite = "Clubs";
+				break;
+			case 3:
+				suite = "Hearts";
+				break;
+			}
+	}
+	public String toString(){
+		String faceValueName = "";
+		
+		switch (faceValue) {
+		
+			case 1:
+				faceValueName = "Ace";
+				break;
+			case 2:
+				faceValueName = "Two";
+				break;
+			case 3:
+				faceValueName = "Three";
+				break;
+			case 4:
+				faceValueName = "Four";
+				break;
+			case 5:
+				faceValueName = "Five";
+				break;
+			case 6:
+				faceValueName = "Six";
+				break;
+			case 7:
+				faceValueName = "Seven";
+				break;
+			case 8:
+				faceValueName = "Eight";
+				break;
+			case 9:
+				faceValueName = "Nine";
+				break;
+			case 10:
+				faceValueName = "Ten";
+				break;
+			case 11:
+				faceValueName = "Jack";
+				break;
+			case 12:
+				faceValueName = "Queen";
+				break;
+			case 13:
+				faceValueName = "King";
+				break;
+				}
+		return faceValueName + " of " + suite; 
+	}
+
+}

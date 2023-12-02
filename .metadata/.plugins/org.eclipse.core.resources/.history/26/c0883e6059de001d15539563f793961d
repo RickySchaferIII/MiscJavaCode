@@ -1,0 +1,55 @@
+import java.lang.reflect.Array;
+import java.util.Scanner;
+public class ArraySearch {
+	
+ public	static int[] expandArray(int[] arrayIn) {
+	 int[] newArray = new int[arrayIn.length*2];
+	 for(int i = 0; i < arrayIn.length; i++) {
+		 newArray[i] = arrayIn[i];
+	 }
+	 return newArray; 
+ }
+	
+	
+	public static void main(String[] args) {
+		String userInput = "";
+		int counter = 0;
+		int targetNum;
+		int arrayCounter = 0;
+		int userNumber = 0;
+	
+	
+		
+		Scanner scan = new Scanner(System.in);
+		int[] randomNums = new int[10];
+		while(!userInput.equals("done")) {
+			System.out.print("Please enter a number or type \"done\": ");
+			userInput = scan.nextLine();
+				if(userInput.equals("done")) {
+					break;
+	}
+		userNumber = Integer.parseInt(userInput);
+
+		if(counter>=randomNums.length) {
+			randomNums = expandArray(randomNums);
+	}
+		randomNums[counter] = userNumber;
+		counter++;	
+		
+}
+		for(int i = 0; i<randomNums.length; i++) {
+			System.out.println(randomNums[i]);
+}
+		System.out.print("What Number would you like to count the occurences of? ");
+		targetNum = scan.nextInt();
+		for(int i = 0; i<randomNums.length; i++) {
+			if(userNumber == targetNum) {
+				arrayCounter++;
+				
+			}
+		
+		}
+		System.out.println("There are " + arrayCounter + " occurences of " + targetNum + " in the array.");
+		scan.close();
+	}
+}

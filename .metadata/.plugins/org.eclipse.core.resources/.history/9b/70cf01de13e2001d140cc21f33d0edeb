@@ -1,0 +1,67 @@
+
+
+import java.util.Scanner;
+public class ContactList {
+
+public static Contact[] expandArray(Contact[] arrayIn) {
+	Contact[] newContact = new Contact[arrayIn.length*2];
+	for(int i = 0; i < arrayIn.length; i++) {
+		newContact[i] = arrayIn[i];
+	}
+	return newContact; 
+}
+	
+	public static void main(String[] args) {
+		String userFirstName = "";
+		String userLastName = "";
+		int userZipCode;
+		String userInput = "";
+		int counter = 0;
+		
+		
+		
+		Scanner scan = new Scanner(System.in);
+		Contact[] contactBook = new Contact[1];
+		while(!userInput.equals("n")) {
+			System.out.print("Please Enter a first name: ");
+			userFirstName = scan.nextLine();
+			System.out.print("Please Enter the Last name: ");
+			userLastName = scan.nextLine();
+			System.out.print("Please Enter the Zip Code: ");
+			userZipCode = scan.nextInt();
+			Contact newContact = new Contact(userFirstName, userLastName, userZipCode);
+			
+			if(counter>=contactBook.length) {
+				contactBook = expandArray(contactBook);
+			}
+			
+			contactBook[counter] = newContact;
+			counter++;
+			System.out.print("Would you like to continue? (y/n) ");
+			userInput = scan.nextLine();
+			userInput = userInput.toLowerCase();
+			
+		}
+		
+		System.out.print("Please enter the last name you would like to find: ");
+		String findLastName = scan.nextLine();
+		boolean foundContact = false;
+		
+		for (int i = 0; i<contactBook.length; i++) {
+			Contact contact = contactBook[i];
+			if(findLastName.equals(contact.getLastName())) {
+				System.out.println(contact.toString());
+				foundContact = true;
+			}
+			
+		}
+		if(foundContact == false) {
+			System.out.println("Not found.");
+			
+		}
+		scan.close();
+		
+
+	}
+
+}

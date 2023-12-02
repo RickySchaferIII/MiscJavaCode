@@ -1,0 +1,48 @@
+
+class Contact {
+	//Instance Variables
+	private String firstName;
+	private String lastName;
+	private int zipCode;
+	
+	
+	//Constructor
+	public Contact(String firstNameIn, String lastNameIn, int zipCodeIn) {
+		firstName = firstNameIn;
+		lastName = lastNameIn;
+		zipCode = zipCodeIn;
+	}
+	
+	
+	//Getter methods
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public int getZipCode() {
+		return zipCode;
+	}
+	
+	
+	//Setter methods
+	public void setFirstName(String newFirstName) {
+		firstName = newFirstName;
+	}
+	
+	public void setLastName(String newLastName) {
+		lastName = newLastName;
+	}
+	
+	public void setZipCode(int newZipCode) {
+		zipCode = newZipCode;
+	}
+
+	
+	public String toString() {
+		return ("First Name: " + firstName + " Last Name: " + lastName + " Zip Code: " + zipCode);
+	}
+}

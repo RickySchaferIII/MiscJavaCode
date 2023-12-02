@@ -1,0 +1,74 @@
+
+public class Question {
+	
+	private String prompt;
+	private String[] answers;
+	private String correctAnswer;
+	private int correctAnswerIndex;
+	
+	
+	//Constructor
+	Question(String promptIn, String correctAnswerIn, String[] answersIn) {
+		prompt = promptIn;
+		correctAnswer = correctAnswerIn.toUpperCase();
+		answers = answersIn;
+		
+		}
+	
+	//Getter Methods
+	private String getPrompt() {
+		return prompt;
+	}
+	
+	private String[] answers() {
+		return answers;
+		}
+	
+	private String correctAnswer() {
+		return correctAnswer;
+	}
+	
+	//Method to convert String answer to index
+	private static int letterToIndex(String correctAnswer) {
+		int indexAnswer;
+		correctAnswer = correctAnswer.toUpperCase();
+		switch(correctAnswer) {
+			case "A":
+				indexAnswer = 0;
+				break;
+			case "B":
+				indexAnswer = 1;
+				break;
+			case "C":
+				indexAnswer = 2;
+				break;
+			case "D":
+				indexAnswer = 3;
+				break;
+			default:
+				indexAnswer = -1;
+				break;
+		}
+		return indexAnswer;
+	}
+	
+	//toString
+	public String toString(){
+		String output = "1). " + prompt;
+		output += "/ta. " + answers[0];
+		output += "/tb. " + answers[1];
+		output += "/tc. " + answers[2];
+		output += "/td. " + answers[3];
+		
+		return output;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,43 @@
+
+
+	// Ricky Schafer [email address:tschafer0109@gmail.com ]
+	/**
+	 * Overview: User enters a string the program then checks to see if the string matches the length requirements if not the program throws an error
+	 * Input: User inputs a string
+	 * Output: Text Display * Variables: userAnswer and endString
+	 * Plan:
+	 * 1. User runs the program
+	 * 2. User inputs a string or types done
+	 * 3. Program checks whether the string is too long or the user typed done
+	 * 4. If the user typed done the program ends
+	 * 5. If the user typed to long of a string the program throws an exception
+	 * 6. If none of the above happens the user can keep enteriong strings
+	 * @version: 1.0 May 2, 2023
+	 * @author: Ricky / Schafer
+	 */
+	
+
+	import java.util.Scanner;
+
+	public class Driver {
+
+	    public static void main(String[] args) throws StringTooLongException {
+	        Scanner scan = new Scanner(System.in);
+	        String userAnswer = "";
+	        String endString = "DONE";
+	        while (!userAnswer.equals(endString)) {
+	            System.out.print("Please type in a string or type Done if you are finished: ");
+	            userAnswer = scan.nextLine().toUpperCase();
+
+	            if (userAnswer.length() >= 20) {
+	                throw new StringTooLongException();
+	            }
+
+
+
+
+	        }
+	    }
+	}
+
+
